@@ -1,0 +1,3 @@
+#Tue Nov 18 17:16:32 CST 2014
+eclipse.preferences.version=1
+org.jboss.ide.eclipse.as.core.singledeployable.deployableList=src/main/java/com/vancl/solr/plugin/dih/dao/impl/JdbcProductDAO.java\n

@@ -1,0 +1,724 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=1080" >
+<title>支付结算-魅族在线商店</title>
+<meta name="keywords" content="魅族在线商店">
+<meta name="description" content="魅族在线商店" />
+<base href="http://store.meizu.com" />
+<link rel="stylesheet" href="http://store.res.meizu.com/resources/php/store/css/base.css?201410311" />
+<link rel="stylesheet" href="http://store.res.meizu.com/resources/php/store/css/payment.css?201410311" /><style type="text/css">
+html,body,div,ul,li,h1{margin: 0; padding: 0; }h1{font-size: 1em; font-weight: normal; font-style: normal;}a{text-decoration: none;color: #515151; }ul,li{list-style: none; }
+body {font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";font-size: 14px;color: #515151; }
+#meizu-header *{margin:0;padding:0}#meizu-header .meizu-row{letter-spacing:-0.31em;*letter-spacing:normal;*word-spacing:-0.43em;word-spacing:-0.43em;text-rendering:optimizespeed;display:-webkit-flex;-webkit-flex-flow:row wrap;display:-ms-flexbox;-ms-flex-flow:row wrap}#meizu-header .col-1-24,#meizu-header .col-2-24,#meizu-header .col-3-24,#meizu-header .col-4-24,#meizu-header .col-5-24,#meizu-header .col-6-24,#meizu-header .col-7-24,#meizu-header .col-8-24,#meizu-header .col-9-24,#meizu-header .col-10-24,#meizu-header .col-11-24,#meizu-header .col-12-24,#meizu-header .col-13-24,#meizu-header .col-14-24,#meizu-header .col-15-24,#meizu-header .col-16-24,#meizu-header .col-17-24,#meizu-header .col-18-24,#meizu-header .col-19-24,#meizu-header .col-20-24,#meizu-header .col-21-24,#meizu-header .col-22-24,#meizu-header .col-23-24,#meizu-header .col-24-24{display:inline-block;*display:inline;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}#meizu-header .col-1-24{width:4.1667%;*width:4.1357%}#meizu-header .col-2-24{width:8.3333%;*width:8.3023%}#meizu-header .col-3-24{width:12.5000%;*width:12.4690%}#meizu-header .col-4-24{width:16.6667%;*width:16.6357%}#meizu-header .col-5-24{margin-top:1px;width:20.8333%;*width:20.8023%}#meizu-header .col-6-24{width:25%;*width:24.9690%}#meizu-header .col-7-24{width:29.1667%;*width:29.1357%}#meizu-header .col-8-24{width:33.3333%;*width:33.3023%}#meizu-header .col-9-24{width:37.5000%;*width:37.4690%}#meizu-header .col-10-24{width:41.6667%;*width:41.6357%}#meizu-header .col-11-24{width:45.8333%;*width:45.8023%}#meizu-header .col-12-24{width:50%;*width:49.9690%}#meizu-header .col-13-24{width:54.1667%;*width:54.1357%}#meizu-header .col-14-24{width:58.3333%;*width:58.3023%}#meizu-header .col-15-24{width:62.5000%;*width:62.4690%}#meizu-header .col-16-24{width:66.6667%;*width:66.6357%}#meizu-header .col-17-24{width:70.8333%;*width:70.8023%}#meizu-header .col-19-24{width:79.1667%;*width:79.1357%}#meizu-header .col-18-24{width:75%;*width:74.9690%}#meizu-header .col-20-24{width:83.3333%;*width:83.3023%}#meizu-header .col-21-24{width:87.5000%;*width:87.4690%}#meizu-header .col-22-24{width:91.6667%;*width:91.6357%}#meizu-header .col-23-24{width:95.8333%;*width:95.8023%}#meizu-header .col-24-24{width:100%}#meizu-header{z-index:999;font-family:"微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";font-size:14px;color:#515151;font-size:14px;position:relative}#meizu-header a{text-decoration:none;color:#515151}#meizu-header img{border:0}#meizu-header li:hover a{color:#31a5e7}#meizu-header .meizu-header-wrap{width:1080px;margin:0 auto}#meizu-header .meizu-header-wrap-sm{width:530px;margin:0 auto}#meizu-header .meizu-header-link li{list-style:none;padding:32px 0 29px 0;text-align:center}#meizu-header .meizu-header-sub li{padding:20px 0}#meizu-header .meizu-header-sub li:hover a{color:#515151}#meizu-header .meizu-header-login a:hover,#meizu-header .meizu-header-link li.hover a{color:#31a5e7}#meizu-header .meizu-header-logo{padding:28px 0}#meizu-header .meizu-header-logo img{margin-left:20px}#meizu-header .meizu-header-login{font-size:12px;padding:31px 0 30px 0}#meizu-header .meizu-header-login .login{margin-left:0px}#meizu-header .meizu-header-main{border-bottom:1px solid #e9e9e9}#meizu-header .meizu-header-sub{background-color:#fff;width:100%;position:absolute;top:80px;display:none}#meizu-header .meizu-header-sub{text-align:center;border-bottom:1px solid #e9e9e9}#meizu-header .meizu-header-img.mx3{padding-top:6px}#meizu-header .meizu-header-img.mx2{padding-top:11px}#meizu-header li.meizu-header-login:hover a{color:#515151}#meizu-header li.meizu-header-login a:hover{color:#31a5e7}@media screen and (max-width:1080px){#meizu-header .meizu-header{width:1080px}}#mzCustName {height: 15px;overflow: hidden;text-align: right;text-overflow: ellipsis;white-space: nowrap;width: 65px;} #meizu-header .meizu-header-link #isLogin{ text-align:right;}#mzLogout{ margin-right:20px;}
+.clearfix:after,.clearfix:before {content:"";display:table;height:0px;clear:both;visibility:hidden;}.clearfix {*zoom:1;}.fl{float:left;}.fr {float:right;}
+</style>
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/common.js"></script>
+</head>
+
+<body>
+
+<div id="meizu-header" class="meizu-header">
+    <div class="meizu-header-main">
+        <div class="meizu-header-wrap">
+            <div class="meizu-row">
+                <div class="col-10-24">
+                    <div class="meizu-header-logo">
+                        <a href="http://www.meizu.com/index.html"><img src="http://www2.res.meizu.com/zh_cn/images/common/logo-header.jpg" alt="魅族手机" /></a>
+                    </div>
+                </div>
+                <div class="col-14-24">
+                    <div class="meizu-header-link">
+                        <ul class="meizu-row">
+                            <li class="col-4-24 hover"><a href="http://store.meizu.com/">在线商店</a></li>
+                        	<li id="meizu-header-product" class="col-3-24"><a id="meizu-header-product-a" href="http://www.meizu.com/products/index.html">产品</a></li>
+                            <li class="col-3-24"><a href="http://retail.meizu.com/">专卖店</a></li>
+                            <li class="col-3-24"><a href="http://www.flyme.cn/">Flyme</a></li>
+                            <li class="col-3-24"><a href="http://service.meizu.com/">服务</a></li>
+                            <li class="col-3-24"><a href="http://bbs.meizu.cn/">社区</a></li>
+                            <li id="goToLogin" class="meizu-header-login col-5-24"> <a id='mzLogin' href='javascript:void(0);' thref='https://member.meizu.com/login/login.html?appuri=http://store.meizu.com/accounts/login.htm&sid=&service=store&useruri=http://store.meizu.com/order/payment' hidefocus="true">登录</a> | <a id='mzRegister' href='javascript:void(0);' thref='https://member.meizu.com/register.jsp?service=store&appuri=http://store.meizu.com/accounts/login.htm&useruri=' hidefocus="true" class="C_br0">注册</a></li>
+                            <li id="isLogin" class="meizu-header-login col-5-24" style="display:none;"><a href="https://member.meizu.com/uc/webjsp/member/detail" id="mzCustName" class="login"></a> | <a id='mzLogout' class="C_br0" href='javascript:void(0);' thref='http://store.meizu.com/accounts/logout.htm?useruri=http://store.meizu.com/order/payment' hidefocus="true">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="storeContainer">
+    <div class="store_payment">
+       <div class="paymenttips">
+            <dl class="clearfix payment_info">
+                <dt class="icon"></dt>
+                <dd>
+                    <h2>订单提交成功，应付金额 <span class="price_payment">1699.00</span> 元</h2>
+                    <span>订单号：11268591786412879&nbsp;&nbsp;&nbsp;&nbsp;请您在 <bdo>3 日</bdo> 内完成支付，否则订单会被自动取消</span>
+                    <div class="part">
+                        <dl class="clearfix">
+                            <dt>商品</dt>
+                            <dd class="goods">
+                            	                            		    								<span class="first">MX3(32G) 联通版 前黑后白 X 1</span>
+    							                            </dd>
+                        </dl>
+                        <dl class="clearfix">
+                            <dt>收货地址</dt>
+                            <dd>
+                                <span class="first">四川省成都市锦江区盐市口中环广场2座35层 610021（邮编） 李冀（收） 18583981270</span>
+                                <a href="http://store.meizu.com/order/modify/11268591786412879">[ 修改 ]</a>                            </dd>
+                        </dl>
+                    </div>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+        </div>
+        
+        <div class="paymentway">
+        	<ul class="tabheader_payment">
+    			<li class="tabitems_payment currenttab_payment"><a href="javascript:void(0);">在线支付</a></li>
+    			<li id="" class="tabitems_payment"><a href="javascript:void(0);">银行汇款</a></li>	
+                <li class="tabitems_payment" onclick="showalipaycode('11268591786412879');"><a href="javascript:void(0);">扫一扫</a></li>	
+            </ul>
+            <ul class="tabcontent_payment">
+            	<li class="contentitems_payment currentcont_payment">
+            		<form id="payment_form_alipay" action="http://store.meizu.com/payment/alipay" method="post" target="_blank">
+                    <input  type="hidden" name="OrderSN" value="11268591786412879" />
+                	<div class="alipay_payment">
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><label for="Alipay" class="radiowrapper radiochecked" onclick="changepay('alipay')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/Alipay.jpg?201410311"></label><input class="displaynone" id="Alipay" name="paymentWay" type="radio" checked="checked" value="Alipay"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><label for="CMB" class="radiowrapper" onclick="changepay('BOCB2C')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/BOC.jpg?201410311"></label><input class="displaynone" id="BOCB2C" name="paymentWay" type="radio" value="BOCB2C"/></td>
+                                <td><label for="ICBC" class="radiowrapper" onclick="changepay('CCB')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/CCB.jpg?201410311"></label><input class="displaynone" id="CCB" name="paymentWay" type="radio" value="CCB"/></td>
+                                <td><label for="BOC" class="radiowrapper" onclick="changepay('ABC')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/ABOC.jpg?201410311"></label><input class="displaynone" id="ABC" name="paymentWay" type="radio" value="ABC"/></td>
+                                <td><label for="CEB" class="radiowrapper" onclick="changepay('ICBCB2C')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/ICBC.jpg?201410311"></label><input class="displaynone" id="ICBCB2C" name="paymentWay" type="radio" value="ICBCB2C"/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="CNCB" class="radiowrapper" onclick="changepay('COMM')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/BOCM.jpg?201410311"></label><input class="displaynone" id="COMM" name="paymentWay" type="radio" value="COMM"/></td>
+                                <td><label for="PSBC" class="radiowrapper" onclick="changepay('CMB')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/CMB.jpg?201410311"></label><input class="displaynone" id="CMB" name="paymentWay" type="radio" value="CMB"/></td>
+                                <td><label for="CBB" class="radiowrapper" onclick="changepay('PSBC-DEBIT')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/PSBC.jpg?201410311"></label><input class="displaynone" id="PSBC-DEBIT" name="paymentWay" type="radio" value="PSBC-DEBIT" /></td>
+                                <td><label for="CCB" class="radiowrapper" onclick="changepay('CIB')"><span class="radio_payment"></span><img src="http://store.res.meizu.com/resources/php/store/images/IBC.jpg?201410311"></label><input class="displaynone" id="CIB" name="paymentWay" type="radio" value="CIB" /></td>
+                            </tr>
+                        </table>
+                        <table id="bankquota" class="bankinfo_payment" cellpadding="0" cellspacing="0">
+                        	<col width="150px" />
+                            <col width="400px" />
+                            <col width="146px" />
+                            <col width="145px" />
+                        	<tr>
+                            	<th>银行名称</th>
+                                <th>限额</th>
+                                <th>支持卡种</th>
+                                <th class="lastitems_bankinfo">客服电话</th>
+                            </tr>
+                            <tr>
+                            	<td><img id="bankname" src="http://store.res.meizu.com/resources/php/store/images/CMB.jpg?201410311"></td>
+                                <td id="quota" class="quota_payment">单笔限额2000元，每日限额2000元</td>
+                                <td id="cardtype">储蓄卡/信用卡</td>
+                                <td id="bankphone" class="lastitems_bankinfo">95555</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="buttonbar_payment rbtnbar_payment"><a class="orangebtn" href="javascript:void(0);" id="go_and_payment" data-bh="action=payment_alipay">立即支付</a></div>
+                    </form>
+                </li>
+                
+                <li class="contentitems_payment hide">
+                	<div id="banktransfer_payment" class="banktransfer_payment">
+                		<ul>
+                            <li>1、请记录订单号、汇款金额及汇款账号，通过网银或银行柜台汇款（建议多汇几角或几分，以区别于其他用户）
+                            	<p>
+                                <span>开户名：&nbsp;&nbsp;&nbsp;&nbsp;珠海市魅族通讯设备有限公司</span><br/>
+                                <span>开户行：&nbsp;&nbsp;&nbsp;&nbsp;广东省珠海市工行明珠支行</span><br/>
+                                <span>账&nbsp;&nbsp;&nbsp;号：&nbsp;&nbsp;&nbsp;&nbsp;20020 24609 10012 3176</span>
+                                </p>
+                            </li>
+                            <li>2、完成银行汇款后，通过点击"我的订单" > "订单详情" > "付款"，回到该页面。选择"银行汇款"，点击"已完成汇款"并提交汇款信息，最后完成订单。</li>
+                            <li>3、请务必在汇完款的第一时间内电话（魅族客服热线 400-788-3333 ）通知我们您的汇款情况，以便我们能及时处理您的订单。</li>
+                        </ul>
+                        <div class="buttonbar_payment rbtnbar_payment"><a class="orangebtn" href="javascript:void(0);" id="finishedbtn_payment">已经完成汇款</a></div>
+                    </div>
+                    <form id="payment_form_bank" action="http://store.meizu.com/payment/bank_transfers" method="post">
+                    <input  type="hidden" name="OrderSN" value="y/WvpWNmoohnnCER+xNrYF500fxurl++RPT0mOVQq18fRDL2MlBkaesbbddbbGXWEYOBKpCrdlMHldhemsTIlQ==" />
+    				<div id="banktransfer_payment_submit" class="banktrans2_payment" style="display:none">
+                        <table cellpadding="0" cellspacing="0">
+                        	<tr>
+                            	<th>实际汇款金额&nbsp;:&nbsp;</th>
+                                <td><input id="payMoney" type="text" name="paymoney" autocomplete="off" onblur="checkMoney(this)" value="" class="input2_text"><span class="required_mark">*</span><span class="error_msg"></span></td>
+                            </tr>
+                            <tr class="choosebank_payment">
+                            	<th>汇款银行&nbsp;:&nbsp;</th>
+                            	<td><select id="" name="remitbank">
+                            <option value="中国工商银行"  selected="selected">中国工商银行</option>
+                            <option value="中国农业银行" >中国农业银行</option>
+                            <option value="中国建设银行" >中国建设银行</option>
+                            <option value="中国民生银行" >中国民生银行</option>
+                            <option value="广东发展银行" >广东发展银行</option>
+                            <option value="招商银行" >招商银行</option>
+                            <option value="兴业银行 ">兴业银行</option>
+                            <option value="交通银行 ">交通银行</option>
+                            <option value="中信银行 ">中信银行</option>
+                            <option value="中国光大银行" >中国光大银行</option>
+                            <option value="浦发银行 ">浦发银行</option>
+                            <option value="上海浦东银 行">上海浦东银行</option>
+                            <option value="邮局网汇" >邮局网汇</option>
+                            <option value="其它 ">其它</option>
+                        </select></td>
+                            </tr>
+                            <tr>
+                            	<th>您的账户名&nbsp;:&nbsp;</th>
+                            	<td><input id="remitName" type="text" name="remitname" autocomplete="off" onblur="accountName(this)" value="" class="input1_text"><span class="required_mark">*</span><span class="error_msg"></span></td>
+                            </tr>
+                            <tr>
+                            	<th>您的银行账户&nbsp;:&nbsp;</th>
+                            	<td><input id="remitAccount" type="text" name="remitaccount" autocomplete="off" onblur="bankAccount(this)" value="" class="input1_text"><span class="required_mark">*</span><span class="error_msg"></span></td>
+                            </tr>
+                            <tr>
+                            	<th>再次输入银行账户&nbsp;:&nbsp;</th>
+                            	<td><input id="remitAccount2" type="text" name="remitaccount2" autocomplete="off" onblur="equalAccount(this)" value="" class="input1_text"><span class="required_mark">*</span><span class="error_msg"></span></td>
+                            </tr>
+                            <tr>
+                            	<th>汇款时间&nbsp;:&nbsp;</th>
+                            	<td><input id="datepicker" readonly="readonly" type="text" name="remittime" autocomplete="off" onblur="noEmpty(this)" value="" class="input1_text"><span class="required_mark">*</span><span class="error_msg"></span></td>
+                            </tr>
+                        </table>
+                        <div class="buttonbar_payment"><a id="finishedbtn_payment_submit" class="bluebtn" data-bh="action=payment_bank" style="display:none" href="javascript:void(0);">提交</a></div>
+    				</div>
+    				</form>
+                </li>
+                
+                <li class="contentitems_payment hide">
+                    <div id="qrcode_payment" class="banktransfer_payment"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="payment_result_contain" style="display:none">
+	<div class="d-content">
+		<h3 class="title_dialog">支付提示</h3>
+		<div id="div_captcha">请您在新打开的网上银行页面进行支付，支付完成前请不要关闭该窗口。</div>
+	</div>
+					<div class="dialog_btnbar"><a id="pay_succeed" href="http://store.meizu.com/myorder/detail/11268591786412879?type=myorder" class="bluebtn button_dialog">完成支付</a><a target="_blank" id="pay_fail" href="http://store.meizu.com/explain/payment_helps.html" class="graybtn button_dialog">支付失败</a></div>
+	</div>
+
+<link type='text/css' href='http://store.res.meizu.com/resources/php/store/css/dialog.css?201410311' rel='stylesheet' media='screen' />
+<link type="text/css" rel="stylesheet" href="http://store.res.meizu.com/resources/php/store/css/jquery-ui-1.8.24.custom.css?201410311" />
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/jquery.ui.core.js?201410311"></script>
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/jquery.ui.datepicker.js?201410311"></script>
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/main.js?201410311"></script>
+<script type="text/javascript" src="http://store.res.meizu.com/resources/php/store/js/jquery.simplemodal.js?201410311"></script>
+<script type="text/javascript">
+window.history.forward(1);
+//控制input/textarea样式
+function inputStyle(items,except){
+	items.focus(function(){
+		if($(this).hasClass(except)){
+			return false;	
+		}else{
+			$(this).addClass("currentInput");					 
+		}
+	})
+	items.blur(function(){
+		$(this).removeClass("currentInput");					
+	})
+}
+function tabSwitch(tabItems,contItems,tabCur){
+	tabItems.click(function(){
+		var index = $(this).index();
+		var cont = contItems.get(index);
+		$(this).addClass(tabCur).siblings().removeClass(tabCur);
+		$(cont).show().siblings().hide();
+
+	})
+}
+/*模拟radio*/
+function radioController(pa){
+	$(pa + " .radiowrapper").click(function(){
+		if(!$(this).hasClass("radiochecked")){
+			$(this).parents(pa).find(".radiowrapper").removeClass("radiochecked").next("input:radio").attr("checked",false);
+			$(this).addClass("radiochecked").next("input:radio").attr("checked",true);
+			if(pa == ".invoicetype_invoice"){
+				var that = $(this);
+				var input = that.next("input").attr("id");
+				if(input == "companyType"){
+					that.parent().find(".required_mark").show();
+					that.parent().find("input:visible").focus();
+				}else{
+					var name = "";
+					if($("#consId").length == "0"){//如果为未登录状态
+						name = $("#consName").attr("value");
+					}else{//如果为登录状态
+						name = $(".itemsselected_shortcons").find(".consname_shortcons").text();
+					}
+					var sib = that.parent().siblings();
+					$("#personalItem").attr("value",name);
+					sib.find("input:visible").attr("onblur","");
+					sib.find(".error_msg").text("").hide();
+					sib.find(".required_mark").hide();
+					sib.find("input:visible").removeClass("errorInput");
+				}
+			}
+			return false;
+		}
+	})
+}
+$(function(){
+	inputStyle($("#storeContainer input:text"));
+	tabSwitch($(".tabheader_payment .tabitems_payment"),$(".tabcontent_payment .contentitems_payment"),"currenttab_payment","currentcont_payment");
+	radioController(".alipay_payment");
+	$('#finishedbtn_payment').click(function() {
+		$('#banktransfer_payment').hide();
+		$('#banktransfer_payment_submit').show();
+		$('#finishedbtn_payment_submit').show();
+	});
+	
+	$('#go_and_payment').click(function(){
+		tipsPop();
+		$('#payment_form_alipay').submit();
+	});
+	
+	
+	$('#finishedbtn_payment_submit').click(function(){
+		var result=formValid();
+		if(result) $('#payment_form_bank').submit();
+	});
+})
+var nowbank='';
+var bankconfig={
+	'BOCB2C':{
+		'img':'BOC.jpg',
+		'quota':'储蓄卡：单笔限额50000元，每日限额100000元；信用卡：单笔限额300元，每��限额5000元。',
+		'cardtype':'信用卡/储蓄卡',
+		'bankphone':'95566'
+	},
+	'CCB':{
+		'img':'CCB.jpg',
+		'quota':'准贷记卡：动态口令卡用户单笔限额5000元，每日限额5000元；网银盾用户单笔限额5000元，每日限额5000元；<br>储蓄卡：动态口令用户限额50000元；网银盾用户限额500000元；<br>信用卡：限额500元。<br>（注：建行企业版的支付限额以在银行设置的限额为准）',
+		'cardtype':'信用卡/储蓄卡/准贷记卡',
+		'bankphone':'95533'
+	},
+	'ABC':{
+		'img':'ABOC.jpg',
+		'quota':'储蓄卡：动态口令卡用户单笔限额1000元，每日限额3000元；<br>准贷记卡：动态口令卡用户单笔限额1000元，每日限额3000元；移动证书用户无限额。<br>（注：农行企业版的支付限额以在银行设置的限额为准）',
+		'cardtype':'借记卡/准贷记卡',
+		'bankphone':'95599'
+	},
+	'ICBCB2C':{
+		'img':'ICBC.jpg',
+		'quota':'U盾用户：信用卡单笔限额1000元与信用卡本身限额孰低，每日限额信用卡本身透支限额。储蓄卡单笔限额100万元，每日限额：100万元；<br>柜面注册存量静态密码用户：信用卡每日限额300元与信用卡本身限额孰低，储蓄卡每日限额300元；<br>已开通手机短信认证电子银行口令卡用户：信用卡单笔限额1000元与信用卡本身限额孰低，每日限额000元与信用卡本身限额孰低；储蓄卡单笔限额2000元，每日限额5000元；<br>未开通手机短信认证电子银行口令卡用户：信用卡单笔限额500元与信用卡本身限额孰低，每日限额1000元与信用卡本身限额孰低；储蓄卡单笔限额500元，每日限额1000元。<br>（注：工行企业版的支付限额以在银行设置的限额为准）',
+		'cardtype':'信用卡/储蓄卡',
+		'bankphone':'95588'
+	},
+	'COMM':{
+		'img':'BOCM.jpg',
+		'quota':'手机注册版：信用卡限额5000元与信用卡本身限额孰低；储蓄卡和准贷记卡限额5000元；<br>证书认证版：信用卡限额1万元与信用卡本身限额孰低；储蓄卡和准贷记卡限额5万元。',
+		'cardtype':'信用卡/储蓄卡/准贷记卡',
+		'bankphone':'95559'
+	},
+	'CMB':{
+		'img':'CMB.jpg',
+		'quota':'储蓄卡/准贷记卡：大众版限额500元；专业版无限额；<br>信用卡：单笔限额499.99元，每日限额为信用卡本身透支额度。',
+		'cardtype':'信用卡/储蓄卡/准贷记卡',
+		'bankphone':'95555'
+	},
+	'PSBC-DEBIT':{
+		'img':'PSBC.jpg',
+		'quota':'单张汇票收据限额5000元；<br>邮政网汇e充值：普通账户1次/日；已开通短信提醒的账户3次/日；已安装数字证书的账户不限次数。',
+		'cardtype':'不需要邮政账户也可以',
+		'bankphone':'11185'
+	},
+	'SDB':{
+		'img':'SZDB.jpg',
+		'quota':'动态口令刮刮卡用户每日限额5000元；编码器和数字证书用户无限额。',
+		'cardtype':'储蓄卡',
+		'bankphone':'95501'
+	},
+	'CIB':{
+		'img':'IBC.jpg',
+		'quota':'储蓄卡：证书用户无限额；非证书用户有1000和5000两种限额，由用户在开通网上购物功能时自行选择；e卡每日5000元；<br>信用卡：单笔限额600元，账期内限额10000元。',
+		'cardtype':'信用卡/储蓄卡',
+		'bankphone':'95561'
+	}
+};
+function changepay(paymethod){
+	nowbank=paymethod;
+	$('#bankquota').show();
+	if(paymethod != 'alipay'){
+		$('#bankname').attr('src','http://store.res.meizu.com/resources/php/store/images/'+bankconfig[paymethod]['img']);
+		$('#quota').html(bankconfig[paymethod]['quota']);
+		$('#cardtype').html(bankconfig[paymethod]['cardtype']);
+		$('#bankphone').html(bankconfig[paymethod]['bankphone']);
+		$('#btnBarTips').show();
+	}else{
+		$('#bankquota').hide();
+		$('#btnBarTips').hide();
+	}
+}
+//表单验证
+function noEmpty(event){
+	if(event.value == ""){
+		$(event).next().next(".error_msg").text("必填").show();
+		$(event).addClass("errorInput");
+	}else{
+		$(event).next().next(".error_msg").text("").hide();
+		$(event).removeClass("errorInput");
+	};
+};
+
+//实际汇款金额
+function checkMoney(event){
+	var regu=/^[1-9]{1}[0-9]{0,}[.]?[0-9]+$/; 
+	if(event.value == ""){
+		$(event).next().next(".error_msg").text("必填").show();
+		$(event).addClass("errorInput");
+	}else if(!(regu.test(event.value))){
+		$(event).next().next(".error_msg").text("请输入正确的金额").show();
+		$(event).addClass("errorInput");
+	}else if(event.value.length>20){
+		$(event).next().next(".error_msg").text("最多允许输入20个字").show();
+		$(event).addClass("errorInput");
+	}else{
+		$(event).next().next(".error_msg").text("").hide();
+		$(event).removeClass("errorInput");
+	};
+}
+//账号名
+function accountName(event){
+	var regu=/^[\u4E00-\u9FA5A-Za-z]+$/;
+	if(event.value == ""){
+		$(event).next().next(".error_msg").text("必填").show();
+		$(event).addClass("errorInput");
+	}else if(!(regu.test(event.value))){
+		$(event).next().next(".error_msg").text("存在特殊字符或空格").show();
+		$(event).addClass("errorInput");
+	}else if(event.value.length>10 || event.value.length<2){
+		$(event).next().next(".error_msg").text("允许输入2-10个字").show();
+		$(event).addClass("errorInput");
+	}else{
+		$(event).next().next(".error_msg").text("").hide();
+		$(event).removeClass("errorInput");
+	};
+}
+//银行账户
+function bankAccount(event){
+	var regu=/^[0-9]+$/; 
+	if(event.value == ""){
+		$(event).next().next(".error_msg").text("必填").show();
+		$(event).addClass("errorInput");
+	}else if(!(regu.test(event.value))){
+		$(event).next().next(".error_msg").text("请输入数字").show();
+		$(event).addClass("errorInput");
+	}else if(event.value.length>20 || event.value.length<8){
+		$(event).next().next(".error_msg").text("允许输入8-20个字").show();
+		$(event).addClass("errorInput");
+	}else{
+		$(event).next().next(".error_msg").text("").hide();
+		$(event).removeClass("errorInput");
+	};
+}
+//再次输入银行账户
+function equalAccount(event){
+	var val1 = $("#remitAccount").attr("value");
+	var val2 = event.value;
+	var regu=/^[0-9]+$/; 
+	if(event.value == ""){
+		$(event).next().next(".error_msg").text("必填").show();
+		$(event).addClass("errorInput");
+	}else if(!(regu.test(event.value))){
+		$(event).next().next(".error_msg").text("请输入数字").show();
+		$(event).addClass("errorInput");
+	}else if(val1 != val2){
+		$(event).next().next(".error_msg").text("账户信息上下不符").show();
+		$(event).addClass("errorInput");
+	}else{
+		$(event).next().next(".error_msg").text("").hide();
+		$(event).removeClass("errorInput");
+	};
+}
+//表单提交验证
+function formValid(){
+	checkMoney(document.getElementById("payMoney"));
+	accountName(document.getElementById("remitName"));
+	bankAccount(document.getElementById("remitAccount"));
+	equalAccount(document.getElementById("remitAccount2"));
+	noEmpty(document.getElementById("datepicker"));
+	var num = $("#banktransfer_payment_submit .error_msg:visible").size();
+	var input_a = $("#payMoney").attr("value");
+	var input_b = $("#remitName").attr("value");
+	var input_c = $("#remitAccount").attr("value");
+	var input_d = $("#remitAccount2").attr("value");
+	var input_e = $("#datepicker").attr("value");
+	if(num == 0 && input_a != "" && input_b != "" && input_c != "" && input_d != "" && input_e != ""){
+		return true;
+	}else{
+		return false;
+	}
+}
+function tipsPop(){
+	$.modal($('#payment_result_contain'));
+	$("#simplemodal-container").css("height","auto");
+}
+
+function showalipaycode(order_no){
+	var iframe=$.trim($("#qrcode_payment").html());
+	if(iframe===''){
+		$("#qrcode_payment").html('<iframe src="http://store.meizu.com/order/qrcode/'+order_no+'" style="border:none;width:100%;height:300px;overflow:hidden"></iframe>');
+	}
+}
+
+$(function() {
+	var yearFrom=new Date().getYear()-60+1900;
+	var yearTo=new Date().getYear()-18+1900;
+   $.datepicker.hour_picker = '小时';
+   $.datepicker.minute_picker = '分钟';
+   $.datepicker.second_picker = '秒';
+   $.datepicker.okbtn_picker = '确定';
+   $.datepicker.nobtn_picker = '取消';//hourval_picker
+   $( "#datepicker" ).datepicker({
+   dateFormat: 'yy-mm-dd', 
+   closeText: '关闭',
+   currentText: 'today',
+   yearRange: yearFrom+':'+yearTo,
+   prevText:'前一月',
+   nextText:'后一月',
+   monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+   dayNames:['周日','周一','周二','周三','周四','周五','周六'],
+   dayNamesMin:['日','一','二','三','四','五','六']
+   }); 
+   $("#datepicker").click(function(){//hour_picker minute_picker second_picker okbtn_picker nobtn_picker
+		var oldVal = $("#datepicker").attr("value");
+		$("#pickerOkBtn").live("click",function(){//确定按钮操作
+			var nowVal = $("#datepicker").attr("value");
+			var h = $("#hourPicker option:selected").text();
+			var m = $("#minutePicker option:selected").text();
+			var s = $("#secondPicker option:selected").text();
+			if(nowVal == ""){
+				var d = new Date();
+				var d_y = d.getFullYear();
+				var d_m = d.getMonth() + 1;
+				var d_d = d.getDate();
+				var d_m_l = d_m.toString().length;
+				var d_d_l = d_d.toString().length;
+				if(d_m_l == 1){
+					d_m = "0" + d_m.toString();
+				}
+				if(d_d_l == 1){
+					d_d = "0" + d_d.toString();
+				}
+				nowVal = d_y + "-" + d_m + "-" + d_d;
+			}
+			var finalVal = nowVal.substring(0,10) + " " + " " + h + ":" + m + ":" + s;
+			$("#datepicker").attr("value",finalVal);
+			$.datepicker._hideDatepicker();
+			noEmpty(document.getElementById("datepicker"));
+		})
+		$("#pickerNoBtn").live("click",function(){//取消按钮操作
+			$("#datepicker").attr("value",oldVal);
+			$.datepicker._hideDatepicker();	
+			noEmpty(document.getElementById("datepicker"));
+		})
+	})
+   
+});
+
+$(document).ready(function(){
+	MeizuBH('order_id=11268591786412879&action=order_submit');
+});
+</script>
+<div class="store_service">
+    <div class="service_wrap">
+        <div class="service_all">
+            <div class="serivce_item">
+                <i class="return"></i>
+                <p><span>7天</span>无理由退货</p>
+            </div>
+            <div class="serivce_item">
+                <i class="change"></i>
+                <p><span>15天</span>换货保障</p>
+            </div>
+            <div class="serivce_item">
+                <i class="repair"></i>
+                <p><span>1年</span>免费保修</p>
+            </div>
+            <div class="serivce_item">
+                <i class="postage"></i>
+                <p>全场包邮</p>
+            </div>
+            <div class="serivce_item">
+                <i class="shop"></i>
+                <p><span>800多</span>家专卖店</p>
+            </div>
+        </div>
+    </div>
+</div><style>
+#meizu-footer *{margin:0;padding:0;}#meizu-footer .meizu-row{letter-spacing:-0.31em;*letter-spacing:normal;*word-spacing:-0.43em;word-spacing:-0.43em;text-rendering:optimizespeed;display:-webkit-flex;-webkit-flex-flow:row wrap;display:-ms-flexbox;-ms-flex-flow:row wrap;}#meizu-footer .col-1-24,#meizu-footer .col-2-24,#meizu-footer .col-3-24,#meizu-footer .col-4-24,#meizu-footer .col-5-24,#meizu-footer .col-6-24,#meizu-footer .col-7-24,#meizu-footer .col-8-24,#meizu-footer .col-9-24,#meizu-footer .col-10-24,#meizu-footer .col-11-24,#meizu-footer .col-12-24,#meizu-footer .col-13-24,#meizu-footer .col-14-24,#meizu-footer .col-15-24,#meizu-footer .col-16-24,#meizu-footer .col-17-24,#meizu-footer .col-18-24,#meizu-footer .col-19-24,#meizu-footer .col-20-24,#meizu-footer .col-21-24,#meizu-footer .col-22-24,#meizu-footer .col-23-24,#meizu-footer .col-24-24{display:inline-block;*display:inline;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto;}#meizu-footer .col-1-24{width:4.1667%;*width:4.1357%;}#meizu-footer .col-2-24{width:8.3333%;*width:8.3023%;}#meizu-footer .col-3-24{width:12.5000%;*width:12.4690%;}#meizu-footer .col-4-24{width:16.6667%;*width:16.6357%;}#meizu-footer .col-5-24{width:20.8333%;*width:20.8023%;}#meizu-footer .col-6-24{width:25%;*width:24.9690%;}#meizu-footer .col-7-24{width:29.1667%;*width:29.1357%;}#meizu-footer .col-8-24{width:33.3333%;*width:33.3023%;}#meizu-footer .col-9-24{width:37.5000%;*width:37.4690%;}#meizu-footer .col-10-24{width:41.6667%;*width:41.6357%;}#meizu-footer .col-11-24{width:45.8333%;*width:45.8023%;}#meizu-footer .col-12-24{width:50%;*width:49.9690%;}#meizu-footer .col-13-24{width:54.1667%;*width:54.1357%;}#meizu-footer .col-14-24{width:58.3333%;*width:58.3023%;}#meizu-footer .col-15-24{width:62.5000%;*width:62.4690%;}#meizu-footer .col-16-24{width:66.6667%;*width:66.6357%;}#meizu-footer .col-17-24{width:70.8333%;*width:70.8023%;}#meizu-footer .col-18-24{width:75%;*width:74.9690%;}#meizu-footer .col-19-24{width:79.1667%;*width:79.1357%;}#meizu-footer .col-20-24{width:83.3333%;*width:83.3023%;}#meizu-footer .col-21-24{width:87.5000%;*width:87.4690%;}#meizu-footer .col-22-24{width:91.6667%;*width:91.6357%;}#meizu-footer .col-23-24{width:95.8333%;*width:95.8023%;}#meizu-footer .col-24-24{width:100%;}#meizu-footer .button{outline:0;display:inline-block;*display:inline;zoom:1;line-height:normal;white-space:nowrap;vertical-align:baseline;text-align:center;cursor:pointer;-webkit-user-drag:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}#meizu-footer .button::-moz-focus-inner{padding:0;border:0;}#meizu-footer .button{font-family:inherit;font-size:12px;*font-size:90%;*overflow:visible;padding:2px 10px;color:#444;color:rgba(0,0,0,0.80);*color:#444;border:1px solid #999;border:none rgba(0,0,0,0);background-color:transparent;text-decoration:none;}#meizu-footer .button-hover,#meizu-footer .button:hover,#meizu-footer .button:focus{filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#1a000000',GradientType=0);background-image:-webkit-gradient(linear,0 0,0 100%,from(transparent),color-stop(40%,rgba(0,0,0,0.05)),to(rgba(0,0,0,0.10)));background-image:-webkit-linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));background-image:-moz-linear-gradient(top,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10));background-image:-o-linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));background-image:linear-gradient(transparent,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.10));}#meizu-footer .button-active,#meizu-footer .button:active{box-shadow:0 0 0 1px rgba(0,0,0,0.15) inset,0 0 6px rgba(0,0,0,0.20) inset;}#meizu-footer .button::-moz-focus-inner{padding:0;border:0;}#meizu-footer .button-primary,#meizu-footer a.button-primary{background-color:rgb(61,177,250);color:#fff;}#meizu-footer{z-index:9999;font-family:"微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";font-size:14px;color:#515151;font-size:14px;position:relative;background-color:#fff;}#meizu-footer li{list-style:none;}#meizu-footer a{color:#515151;text-decoration:none;}#meizu-footer .meizu-footer-wrap{width:1080px;margin:0 auto;}#meizu-footer .meizu-footer-link{ background-color:#f8f8f8;padding:60px 0;border-bottom:1px solid #f1f1f1;}#meizu-footer .meizu-footer-link .col-3-24,#meizu-footer .meizu-footer-link .col-4-24{margin-left:60px;}#meizu-footer .meizu-footer-link p{padding:10px 0;font-size:14px;font-weight:bold;}#meizu-footer .meizu-footer-link a{line-height:27px;font-size:12px;}#meizu-footer .button-language{border-top:1px solid #b7b7b7;border-bottom:1px solid #b7b7b7;padding:2px 20px;margin-top:10px;background:transparent url(http://www2.res.meizu.com/zh_cn/images/common/footer-btn-icon.jpg) no-repeat 100% 80%;}#meizu-footer .button-language:hover{background:transparent url(http://www2.res.meizu.com/zh_cn/images/common/footer-btn-icon.jpg) no-repeat 100% 80%;}#meizu-footer .meizu-footer-phone{font-size:16px;}#meizu-footer .meizu-footer-info{text-align:right;margin-right:40px;font-size:12px;padding-top:26px;}#meizu-footer .meizu-footer-logo{padding-top:36px;margin-left:20px;}#meizu-footer .meizu-footer-language{position:relative;}#meizu-footer .meizu-footer-select{display:none;position:absolute;text-align:center;top:-147px;left:90px;background-color:#fff;width:136px;border:1px solid #b7b7b7;}#meizu-footer .meizu-footer-select li{padding:5px 0;}#meizu-footer .footer-flag{width:21px;height:21px;background:#fff url(http://www2.res.meizu.com/zh_cn/images/common/footer-language.png) no-repeat 0 0;margin:3px auto 0 auto;}#meizu-footer .footer-flag.hk{background-position:0 0;}#meizu-footer .footer-flag.en{background-position:-23px 0;}#meizu-footer .footer-flag.ru{background-position:-46px 0;}#meizu-footer .footer-flag.il{background-position:-69px 0;}#meizu-footer .footer-flag.cn{background-position:-92px 0;}#meizu-footer .meizu-footer-select p{border-bottom:1px solid #b7b7b7;}#meizu-footer .meizu-footer-select li:hover,#meizu-footer .meizu-footer-select li:hover .footer-flag{background-color:#00a7ea;}#meizu-footer .meizu-footer-wechat{position:relative;}#meizu-footer .meizu-footer-wechat div{cursor:pointer;}#meizu-footer .meizu-footer-wechat img{z-index:99999;display:none;position:absolute;top:-191px;left:32px;_azimuth:expression(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "',sizingMethod='image')",this.src = "http://www2.res.meizu.com/zh_cn/images/common/blank.gif"):(this.origBg = this.origBg? this.origBg:this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "',sizingMethod='crop')",this.runtimeStyle.backgroundImage = "none")),this.pngSet=true);}#meizu-footer .meizu-footer-link a:hover{color:#31a5e7;}#meizu-footer .meizu-footer-info a{margin-left:10px;}#meizu-footer.tb .meizu-footer-link{border-top:1px solid #f1f1f1;}#meizu-footer .meizu-footer-co{height:80px;}#meizu-footer .meizu-footer-language a:hover{color:#515151;}@media screen and (max-width:1080px){#meizu-footer .meizu-footer-co,#meizu-footer .meizu-footer-link,#meizu-footer .meizu-footer{width:1080px;}}
+</style>
+<div id="meizu-footer" class="meizu-footer">
+    <div class="meizu-footer-link">
+        <div class="meizu-footer-wrap">
+            <div class="meizu-row">
+                <div class="col-3-24">
+                    <ul>
+                        <li><p>帮助说明</p></li>
+                        <li><a target="_blank" href="http://store.meizu.com/explain/payment_help.html">支付方式</a></li>
+                        <li><a target="_blank" href="http://store.meizu.com/explain/deliverynote.html">配送说明</a></li>
+                        <li><a target="_blank" href="http://store.meizu.com/explain/warranty_services.html">售后服务</a></li>
+                        <li><a target="_blank" href="http://store.meizu.com/explain/payment_helps.html">付款帮助</a></li>
+                    </ul>
+                </div>
+                <div class="col-3-24">
+                    <ul>
+                        <li><p>Flyme OS</p></li>
+                        <li><a href="https://cloud.flyme.cn/" target="_blank">云服务</a></li>
+                        <li><a href="http://www.flyme.cn/firmware.jsp" target="_blank">固件下载</a></li>
+                        <li><a href="http://app.flyme.cn/" target="_blank">软件商店</a></li>
+                        <li><a href="http://finder.flyme.cn/" target="_blank">查找手机</a></li>
+                    </ul>
+                </div>
+                <div class="col-3-24">
+                    <ul>
+                        <li><p>关于我们</p></li>
+                        <li><a target="_blank" href="http://www.meizu.com/about.html">关于魅族</a></li>
+                        <li><a target="_blank" href="http://hr.meizu.com/">加入我们</a></li>
+                        <li><a target="_blank" href="http://www.meizu.com/contact.html">联系我们</a></li>
+                        <li><a target="_blank" href="http://www.meizu.com/legalStatement.html">法律声明</a></li>
+                    </ul>
+                </div>
+                <div class="col-3-24">
+                    <ul>
+                        <li><p>关注我们</p></li>
+                        <li><a target="_blank" href="http://weibo.com/meizumobile">新浪微博</a></li>
+                        <li><a target="_blank" href="http://t.qq.com/meizu_tech">腾讯微博</a></li>
+                        <li><a target="_blank" href="http://user.qzone.qq.com/2762957059">QQ空间</a></li>
+                        <li class="meizu-footer-wechat">
+                            <a id="meizu-footer-wechat">
+                                官方微信
+                                <img id="meizu-footer-wechat-img" src="http://www2.res.meizu.com/zh_cn/images/common/weixin_1.png" alt="微信二维码">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4-24">
+                    <ul>
+                        <li><p>客服热线</p></li>
+                        <li>
+                            <div class="meizu-row">
+                                <div class="col-16-24">
+                                    <div class="meizu-footer-phone">400-788-3333</div>
+                                </div>
+                                <div class="col-8-24">
+                                    <button class="button button-primary" onclick="window.open('http://bbs.meizu.com/kf.php','_blank','height=473,width=703,fullscreen=3,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=no,scrollbars=no,location=no,titlebar=no,fullscreen=no');">在线客服</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="meizu-footer-language" class="meizu-footer-language">
+                            <a class="button button-language" href="" onclick="return false;">简体中文</a>
+                            <div id="meizu-footer-select" class="meizu-footer-select">
+                                <p>国家或者地区</p>
+                                <ul>
+                                    <li>
+                                        <a target="_blank" href="http://www.meizu.com.hk/">
+                                            <div class="meizu-row">
+                                                <div class="col-9-24"><div class="footer-flag hk"></div></div>
+                                                <div class="col-15-24">繁體中文</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="http://en.meizu.com/">
+                                            <div class="meizu-row">
+                                                <div class="col-9-24"><div class="footer-flag en"></div></div>
+                                                <div class="col-15-24">English</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="http://ru.meizu.com/">
+                                            <div class="meizu-row">
+                                                <div class="col-9-24"><div class="footer-flag ru"></div></div>
+                                                <div class="col-15-24">Русский</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="http://il.meizu.com/">
+                                            <div class="meizu-row">
+                                                <div class="col-9-24"><div class="footer-flag il"></div></div>
+                                                <div class="col-15-24">עברית</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                               </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="meizu-footer-co">
+        <div class="meizu-row">
+            <div class="col-3-24">
+                <div class="meizu-footer-logo"><a target="_blank" href="http://www.meizu.com/index.html"><img src="http://www2.res.meizu.com/zh_cn/images/common/footer-logo.jpg" alt="魅族官网" /></a></div>
+            </div>
+            <div class="col-21-24">
+                <div class="meizu-footer-info">
+                    ©2014 Meizu Telecom EquipmentCo., Ltd. All rights reserved. <a target="_blank" href="http://www.miitbeian.gov.cn/" hidefocus="true">备案号：粤ICP备13003602号-2</a> <a target="_blank" href="http://www2.res.meizu.com/zh_cn/images/common/icp2.jpg" hidefocus="true">经营许可证编号：粤B2-20130198</a> <a target="_blank" href="http://www2.res.meizu.com/zh_cn/images/common/com_licence.jpg" hidefocus="true">营业执照</a>
+                    <a target="_blank" rel="nofollow" href="http://210.76.65.188/" hidefocus="true"><img src="http://www2.res.meizu.com/zh_cn/images/common/footer-copy-1.png"  /></a>
+                    <a target="_blank" rel="nofollow" href="http://210.76.65.188/webrecord/innernet/Welcome.jsp?bano=4404013010531" hidefocus="true"><img src="http://www2.res.meizu.com/zh_cn/images/common/footer-copy-2.png" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>var  lan = document.getElementById('meizu-footer-language'),      a = document.getElementById('meizu-footer-wechat'),      img = document.getElementById('meizu-footer-wechat-img'),      select = document.getElementById('meizu-footer-select');  lan.onmouseover = function  () {    select.style.display = 'block';  };  lan.onmouseout = function  () {    select.style.display = 'none';  };  a.onmouseover = function  () {    img.style.display = 'block';  };  a.onmouseout = function  () {    img.style.display = 'none';  };</script>
+<script type="text/javascript" src="http://tongji.meizu.com/js/flow.js" charset="utf-8"></script>
+<script type="text/javascript">
+var SITE_URL = 'http://store.meizu.com';
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51193582-1', 'meizu.com');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?2a0c04774115b182994cfcacf4c122e9";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+ga('require', 'ecommerce', 'ecommerce.js');
+ga('ecommerce:addTransaction', {
+  'id': '11268591786412879',                    
+  'affiliation': 'MX',  
+  'revenue': '1699.00',           
+  'shipping': '0',       
+  'tax': '0'
+});
+ga('ecommerce:addItem', {
+  'id': '11268591786412879',
+  'name': 'MX3(32G) 联通版 前黑后白',
+  'sku': '287',
+  'category': 'MX',
+  'price': '1699.00',
+  'quantity': '1'
+});					
+ga('ecommerce:send');
+</script>
+</body>
+</html>
