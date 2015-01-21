@@ -42,8 +42,13 @@ public class EPHttpGet {
 		for (String key : set) {
 			httpGet.setHeader(key, headMap.get(key));
 		}
-		this.context = user.getContext();
-		this.client = user.getClient();
+		if(user != null){
+			this.context = user.getContext();
+			this.client = user.getClient();
+		}else{
+			this.context = HttpClientContext.create();
+			this.client = (ConnectionFactory.getHttpClientNInstance(false));
+		}
 		// debug
 		if(this.context != null && this.context.getCookieStore() != null){
 			List<Cookie> list = this.context.getCookieStore().getCookies();
