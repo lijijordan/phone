@@ -76,6 +76,7 @@ public class ConnectionFactory {
 					.register("https", sslsf).build();
 			HttpClientBuilder httpClientBuilder = HttpClients.custom();
 			HttpHost proxy = new HttpHost("127.0.0.1", 8087);
+//			HttpHost proxy = new HttpHost("ctu2-tmg-00.vancloa.cn", 8080);
 			httpClientBuilder.setProxy(proxy);
 			// set Follow Redirects strategy
 			if(!rediret){

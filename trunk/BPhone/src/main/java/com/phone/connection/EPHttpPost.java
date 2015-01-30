@@ -160,9 +160,9 @@ public class EPHttpPost {
 				e.printStackTrace();
 			}
 			// recall
-			if(isReConnection && !(statusCode == 200 || statusCode == 302)){
+			/*if(isReConnection && !(statusCode == 200 || statusCode == 302)){
 				this.connection();
-			}
+			}*/
 		}
 		log.info("cost time : " + (System.currentTimeMillis() - start));
 		return System.currentTimeMillis() - start;
