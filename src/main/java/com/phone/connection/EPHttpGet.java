@@ -84,6 +84,31 @@ public class EPHttpGet {
 */	
 	}
 	
+	public EPHttpGet(String url, ConnectionCallBack callback) {
+		log.info("HTTP Get URL : " + url);
+		this.callback = callback;
+		this.httpGet = new HttpGet(url);
+		RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(ConnectionConstant.SOCKET_TIMEOUT).
+				setConnectTimeout(ConnectionConstant.CONNECT_TIMEOUT).build();
+		httpGet.setConfig(requestConfig);
+		httpGet.setHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+		httpGet.setHeader("Accept-Encoding", "gzip, deflate, sdch");
+		httpGet.setHeader("Accept-Language", "en,zh;q=0.8,ja;q=0.6,zh-CN;q=0.4,ko;q=0.2,zh-TW;q=0.2");
+		httpGet.setHeader("Cache-Control", "no-cache");
+		httpGet.setHeader("Connection", "keep-alive");
+		httpGet.setHeader("Cookie", "_uticket=q9AhmBbmnkyBgdFaeEkL3IUiEvoiee1TUMwmJqIoEI55nCQJbbBFzLR5R1B8S8HWfmb7lbdPX0oYbgG2Ga46BkK3lpt8XOf_OtFDCbKLqy-_KxpWIJ1ZG5q2WSMNBXXUY9ZXRSfS6GJfdwxdisdNhvn_7tKN69a6UmZPyn4dknY*eGJgpKMDW9BA49V9h-AQyA; _gat=1; MEIZUSESSIONID=37084277905335519DB607DF10DA9DDB9EB2131879CBA6C; MEIZUSESSIONVAL=%7B%22uid%22%3A%2210850048%22%2C%22username%22%3A%22%5Cu7528%5Cu623743400192%22%7D; Hm_lvt_2a0c04774115b182994cfcacf4c122e9=1416555152,1416556713,1416556965,1416556981; Hm_lpvt_2a0c04774115b182994cfcacf4c122e9=1416557142; _ga=GA1.2.109721507.1416556398");
+		httpGet.setHeader("Host", "store.meizu.com");
+		httpGet.setHeader("Pragma", "no-cache");
+		httpGet.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36");
+		this.context = HttpClientContext.create();
+		this.client = (ConnectionFactory.getHttpClientNInstance(false));
+/*		if(this.context != null && this.context.getCookieStore() != null){
+			CookieStore cs = context.getCookieStore();
+			System.out.println(cs.getCookies().size());
+		}
+*/	
+	}
+	
 	
 	public int connection(){
 		CloseableHttpResponse response = null;
@@ -132,9 +157,9 @@ public class EPHttpGet {
 				e.printStackTrace();
 			}
 			// recall
-			if(isReConnection && !(statusCode == 200 || statusCode == 302)){
+			/*if(isReConnection && !(statusCode == 200 || statusCode == 302)){
 				this.connection();
-			}
+			}*/
 		}
 		return statusCode;
 	}
@@ -183,9 +208,9 @@ public class EPHttpGet {
 				e.printStackTrace();
 			}
 			// recall
-			if(isReConnection && !(statusCode == 200 || statusCode == 302)){
+			/*if(isReConnection && !(statusCode == 200 || statusCode == 302)){
 				this.connection();
-			}
+			}*/
 		}
 		return statusCode;
 	}
